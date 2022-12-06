@@ -19,21 +19,22 @@
 // 50円足りません。
 
 $yen = 10000;   // 購入金額
-$product = 150; // 商品金額
+$product = 10500; // 商品金額
 
 function calc($yen, $product) {
     $curr = [10000, 5000, 1000, 500, 100, 50, 10, 5, 1];
-        $change = $yen - $product;
-        if ($change > 0) {
-        $tmp = [];
-        foreach ($curr as $val) {
-        $tmp[$val] = intdiv($change, $val);
-        $change = $change % $val;
-        }
-        return $tmp;
-        }
-        return $change;
-}
+    $change = $yen - $product;
+    if ($change > 0) {
+    $tmp = [];
+    foreach ($curr as $val) {
+    $tmp[$val] = intdiv($change, $val);
+    $change = $change % $val;
+    }
+    return $tmp;
+    }
+    return $change;
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -51,7 +52,7 @@ function calc($yen, $product) {
         } elseif ($result == 0) {
         echo '過不足なし';
         } elseif ($result < 0) {
-        echo  $result . '円足りません。';
+        echo  ($result * -1) . '円不足';
         }
         ?>
     </section>

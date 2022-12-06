@@ -13,4 +13,4 @@ $profile = [
     "gender" => "女性",
 ];
 echo $profile["name"]."<br>";
-echo $profile["age"]."・".$profile["gender"];
+echo $profile["age"]."歳・".$profile["gender"];
