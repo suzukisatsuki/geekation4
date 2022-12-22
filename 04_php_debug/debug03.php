@@ -9,7 +9,7 @@
 // 勝敗は勝ちです。
 // 3回目の勝利です。
 
-
+session_start();
 if (! isset($_SESSION['result'])) {
     $_SESSION['result'] = 0;
 }
@@ -116,8 +116,7 @@ class Battle
     public function countVictories()
     {
         if ($this->judge() === '勝ち') {
-            session_start();
-            $_SESSION['result'] += +1;
+            $_SESSION['result'] += 1;
         }
     }
 
